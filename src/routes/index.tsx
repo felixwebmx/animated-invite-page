@@ -61,25 +61,6 @@ function Invitacion() {
         </div>
       </section>
 
-
-      {/* Convocatoria */}
-      <section className="mx-auto max-w-5xl px-6 py-28 md:py-40">
-        <Reveal className="text-center">
-          <p className="font-sans text-xs uppercase tracking-[0.34em] text-secondary">
-            El H. Ayuntamiento de Uriangato, Guanajuato
-          </p>
-          <h1 className="mt-6 text-balance font-display text-4xl leading-[1.1] text-primary md:text-6xl">
-            Tiene el honor de invitarle al{" "}
-            <span className="italic">Segundo Informe de Gobierno</span>
-          </h1>
-          <div className="mx-auto mt-8 h-px w-28 bg-gradient-to-r from-transparent via-accent to-transparent" />
-          <p className="mx-auto mt-8 max-w-xl text-pretty text-base leading-relaxed text-muted-foreground">
-            Un encuentro con la ciudadanía para rendir cuentas del trabajo realizado y
-            trazar juntos el rumbo de Uriangato.
-          </p>
-        </Reveal>
-      </section>
-
       {/* Collage de labor */}
       <section className="relative overflow-hidden py-8 md:py-16">
         <Reveal variant="zoom">
