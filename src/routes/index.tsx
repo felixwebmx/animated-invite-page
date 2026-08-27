@@ -41,15 +41,15 @@ function Invitacion() {
   return (
     <main className="overflow-x-hidden bg-background text-foreground">
       {/* Portada */}
-      <section className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden surface-sage">
-        <img
-          src={portadaFinal.url}
-          alt=""
-          aria-hidden="true"
-          className="absolute inset-0 h-full w-full object-cover opacity-50"
-          style={{ transform: `scale(1.15) translateY(${y * 0.18}px)` }}
+      <section className="surface-sage relative flex min-h-screen flex-col items-center justify-center overflow-hidden">
+        <div
+          className="absolute -left-40 -top-40 h-[36rem] w-[36rem] rounded-full bg-gold/10 blur-3xl"
+          style={{ transform: `translateY(${y * 0.12}px)` }}
         />
-        <div className="absolute inset-0 bg-[linear-gradient(to_bottom,transparent,oklch(0.47_0.062_163/0.75))]" />
+        <div
+          className="absolute -bottom-52 -right-32 h-[34rem] w-[34rem] rounded-full bg-cream/10 blur-3xl"
+          style={{ transform: `translateY(${y * -0.08}px)` }}
+        />
 
         <Reveal variant="zoom" className="relative z-10 w-full max-w-3xl px-6">
           <img
@@ -59,16 +59,17 @@ function Invitacion() {
           />
         </Reveal>
 
-        <Reveal delay={500} className="relative z-10 mt-8 px-6 text-center">
+        <Reveal delay={500} className="relative z-10 mt-6 px-6 text-center">
           <p className="font-sans text-[11px] uppercase tracking-[0.42em] text-cream/85">
             Uriangato, Guanajuato · 2026
           </p>
         </Reveal>
 
-        <div className="absolute bottom-10 left-1/2 z-10 -translate-x-1/2 animate-float">
+        <div className="animate-float absolute bottom-10 left-1/2 z-10 -translate-x-1/2">
           <span className="block h-14 w-px bg-gold/70" />
         </div>
       </section>
+
 
       {/* Convocatoria */}
       <section className="mx-auto max-w-5xl px-6 py-28 md:py-40">
