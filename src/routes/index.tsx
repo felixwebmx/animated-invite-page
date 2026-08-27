@@ -41,26 +41,25 @@ function Invitacion() {
   return (
     <main className="overflow-x-hidden bg-background text-foreground">
       {/* Portada */}
-<section className="surface-sage relative flex min-h-screen items-center justify-center overflow-hidden">
-  <Reveal variant="zoom" className="absolute inset-0">
-    <img
-      src={portada.url}
-      alt="Segundo Informe de Gobierno, Presidente Municipal Juan Carlos Martínez Calderón, Uriangato Gto."
-      className="h-full w-full object-cover"
-    />
-    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-black/25" />
-  </Reveal>
-
-  <Reveal delay={500} className="absolute inset-x-0 bottom-24 z-10 px-6 text-center">
-    <p className="font-sans text-[11px] uppercase tracking-[0.42em] text-cream/90">
-      Uriangato, Guanajuato · 2026
-    </p>
-  </Reveal>
-
-  <div className="animate-float absolute bottom-10 left-1/2 z-10 -translate-x-1/2">
-    <span className="block h-14 w-px bg-gold/70" />
-  </div>
-</section>
+      <section className="surface-sage relative flex min-h-screen items-center justify-center overflow-hidden">
+        <Reveal variant="zoom" className="absolute inset-0 flex items-center justify-center">
+          <img
+            src={portada.url}
+            alt="Segundo Informe de Gobierno, Presidente Municipal Juan Carlos Martínez Calderón, Uriangato Gto."
+            className="h-full w-full object-contain"
+          />
+        </Reveal>
+      
+        <Reveal delay={500} className="absolute inset-x-0 bottom-24 z-10 px-6 text-center">
+          <p className="font-sans text-[11px] uppercase tracking-[0.42em] text-cream/90">
+            Uriangato, Guanajuato · 2026
+          </p>
+        </Reveal>
+      
+        <div className="animate-float absolute bottom-10 left-1/2 z-10 -translate-x-1/2">
+          <span className="block h-14 w-px bg-gold/70" />
+        </div>
+      </section>
 
 
       {/* Convocatoria */}
