@@ -41,34 +41,26 @@ function Invitacion() {
   return (
     <main className="overflow-x-hidden bg-background text-foreground">
       {/* Portada */}
-      <section className="surface-sage relative flex min-h-screen flex-col items-center justify-center overflow-hidden">
-        <div
-          className="absolute -left-40 -top-40 h-[36rem] w-[36rem] rounded-full bg-gold/10 blur-3xl"
-          style={{ transform: `translateY(${y * 0.12}px)` }}
-        />
-        <div
-          className="absolute -bottom-52 -right-32 h-[34rem] w-[34rem] rounded-full bg-cream/10 blur-3xl"
-          style={{ transform: `translateY(${y * -0.08}px)` }}
-        />
+<section className="surface-sage relative flex min-h-screen items-center justify-center overflow-hidden">
+  <Reveal variant="zoom" className="absolute inset-0">
+    <img
+      src={portada.url}
+      alt="Segundo Informe de Gobierno, Presidente Municipal Juan Carlos Martínez Calderón, Uriangato Gto."
+      className="h-full w-full object-cover"
+    />
+    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-black/25" />
+  </Reveal>
 
-        <Reveal variant="zoom" className="relative z-10 w-full max-w-5xl px-4 md:px-6">
-          <img
-            src={portada.url}
-            alt="Segundo Informe de Gobierno, Presidente Municipal Juan Carlos Martínez Calderón, Uriangato Gto."
-            className="mx-auto max-h-[82vh] w-auto max-w-full drop-shadow-[0_30px_60px_rgba(0,0,0,0.35)]"
-          />
-        </Reveal>
+  <Reveal delay={500} className="absolute inset-x-0 bottom-24 z-10 px-6 text-center">
+    <p className="font-sans text-[11px] uppercase tracking-[0.42em] text-cream/90">
+      Uriangato, Guanajuato · 2026
+    </p>
+  </Reveal>
 
-        <Reveal delay={500} className="relative z-10 mt-6 px-6 text-center">
-          <p className="font-sans text-[11px] uppercase tracking-[0.42em] text-cream/85">
-            Uriangato, Guanajuato · 2026
-          </p>
-        </Reveal>
-
-        <div className="animate-float absolute bottom-10 left-1/2 z-10 -translate-x-1/2">
-          <span className="block h-14 w-px bg-gold/70" />
-        </div>
-      </section>
+  <div className="animate-float absolute bottom-10 left-1/2 z-10 -translate-x-1/2">
+    <span className="block h-14 w-px bg-gold/70" />
+  </div>
+</section>
 
 
       {/* Convocatoria */}
