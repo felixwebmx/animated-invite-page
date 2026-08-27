@@ -169,3 +169,38 @@
     color: var(--color-foreground);
   }
 }
+
+@layer base {
+  body {
+    font-family: var(--font-sans);
+    background-image: radial-gradient(
+      oklch(0.28 0.03 160 / 0.035) 1px,
+      transparent 1px
+    );
+    background-size: 4px 4px;
+  }
+  h1, h2, h3 {
+    font-family: var(--font-display);
+  }
+}
+
+@utility text-gradient-gold {
+  background: var(--gradient-gold);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+@utility surface-sage {
+  background: var(--gradient-sage);
+  color: var(--cream);
+}
+
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-14px); }
+}
+
+@utility animate-float {
+  animation: float-slow 7s ease-in-out infinite;
+}
