@@ -76,7 +76,9 @@ export function useParallax<T extends HTMLElement = HTMLDivElement>(
 
     const io =
       typeof IntersectionObserver !== "undefined"
-        ? new IntersectionObserver(([e]) => (visible = e.isIntersecting), {
+        ? new IntersectionObserver((entries) => {
+            visible = entries[0]?.isIntersecting ?? true;
+          }, {
             rootMargin: "20% 0px",
           })
         : null;
