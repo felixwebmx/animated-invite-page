@@ -192,7 +192,9 @@
 }
 
 @utility surface-sage {
-  background: var(--gradient-sage);
+  background:
+    linear-gradient(160deg, oklch(0.66 0.045 150 / 0.88) 0%, oklch(0.47 0.062 163 / 0.9) 100%),
+    url("/__l5e/assets-v1/83f46489-1898-4e9e-84f5-f3675f49bc31/fondo.png") center / cover;
   color: var(--cream);
 }
 
