@@ -51,11 +51,11 @@ function Invitacion() {
           style={{ transform: `translateY(${y * -0.08}px)` }}
         />
 
-        <Reveal variant="zoom" className="relative z-10 w-full max-w-3xl px-6">
+        <Reveal variant="zoom" className="relative z-10 w-full max-w-5xl px-4 md:px-6">
           <img
             src={portada.url}
             alt="Segundo Informe de Gobierno, Presidente Municipal Juan Carlos Martínez Calderón, Uriangato Gto."
-            className="mx-auto w-full drop-shadow-[0_30px_60px_rgba(0,0,0,0.35)]"
+            className="mx-auto max-h-[82vh] w-auto max-w-full drop-shadow-[0_30px_60px_rgba(0,0,0,0.35)]"
           />
         </Reveal>
 
@@ -95,7 +95,7 @@ function Invitacion() {
           <img
             src={contenido1.url}
             alt="Momentos del trabajo del Presidente Municipal con la ciudadanía de Uriangato"
-            className="mx-auto w-full max-w-6xl"
+            className="mx-auto w-full"
             style={{ transform: `translateY(${Math.min(0, (y - 900) * -0.03)}px)` }}
           />
         </Reveal>
@@ -133,7 +133,7 @@ function Invitacion() {
 
       {/* Invitación oficial */}
       <section className="px-6 py-28 md:py-40">
-        <Reveal variant="zoom" className="mx-auto max-w-3xl">
+        <Reveal variant="zoom" className="mx-auto max-w-5xl">
           <img
             src={contenido2.url}
             alt="Invitación oficial al Segundo Informe de Gobierno 2026 de Uriangato, Guanajuato"
