@@ -1,25 +1,25 @@
 import { useState } from "react";
 import { Check, Link2, MessageCircle, Share2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
-
-const TEXTO_DEFAULT =
-  "Le comparto la invitación al Segundo Informe de Gobierno de Juan Carlos Martínez Calderón, Presidente Municipal de Uriangato. Viernes 11 de septiembre, 6:30 p.m., Atrio de la Parroquia de San Miguel Arcángel.";
+import { invitacion, waLink } from "@/config/invitacion";
 
 export function ShareBar() {
-  const [texto, setTexto] = useState(TEXTO_DEFAULT);
+  const [titulo, setTitulo] = useState(invitacion.tituloEnlace);
+  const [texto, setTexto] = useState(invitacion.mensajeWhatsapp);
   const [copiado, setCopiado] = useState(false);
   const [aviso, setAviso] = useState("");
 
   const url = typeof window !== "undefined" ? window.location.href : "";
-  const mensaje = `${texto}\n\n${url}`;
-  const waLink = `https://wa.me/?text=${encodeURIComponent(mensaje)}`;
+  const mensaje = `${titulo ? `*${titulo}*\n\n` : ""}${texto}\n\n${url}`;
+  const link = waLink(mensaje);
 
   const compartir = async () => {
     if (typeof navigator !== "undefined" && navigator.share) {
       try {
-        await navigator.share({ title: "2do Informe de Gobierno · Uriangato", text: texto, url });
+        await navigator.share({ title: titulo, text: texto, url });
         setAviso("Invitación compartida.");
         return;
       } catch {
@@ -43,8 +43,20 @@ export function ShareBar() {
   return (
     <div className="space-y-5">
       <div className="space-y-2 text-left">
+        <Label htmlFor="share-titulo" className="text-sm text-muted-foreground">
+          Título del enlace
+        </Label>
+        <Input
+          id="share-titulo"
+          value={titulo}
+          onChange={(e) => setTitulo(e.target.value)}
+          className="min-h-11 text-base"
+        />
+      </div>
+
+      <div className="space-y-2 text-left">
         <Label htmlFor="share-texto" className="text-sm text-muted-foreground">
-          Personalice el mensaje que enviará
+          Mensaje de WhatsApp
         </Label>
         <Textarea
           id="share-texto"
@@ -55,6 +67,15 @@ export function ShareBar() {
         />
       </div>
 
+      <div className="rounded-md border border-border bg-muted/40 p-4 text-left">
+        <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">
+          Vista previa
+        </p>
+        <p className="mt-2 whitespace-pre-wrap text-sm leading-relaxed text-foreground/80">
+          {mensaje}
+        </p>
+      </div>
+
       <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap">
         <Button type="button" onClick={compartir} className="min-h-11 sm:px-8">
           <Share2 aria-hidden="true" />
@@ -62,7 +83,7 @@ export function ShareBar() {
         </Button>
 
         <Button asChild variant="secondary" className="min-h-11 sm:px-8">
-          <a href={waLink} target="_blank" rel="noopener noreferrer">
+          <a href={link} target="_blank" rel="noopener noreferrer">
             <MessageCircle aria-hidden="true" />
             Enviar por WhatsApp
           </a>
