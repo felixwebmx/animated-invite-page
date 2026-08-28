@@ -55,13 +55,13 @@ function Invitacion() {
       {/* Portada a pantalla completa */}
       <section
         aria-label="Portada de la invitación"
-        className="surface-sage relative min-h-dvh w-full overflow-hidden"
+        className="surface-sage relative w-full overflow-hidden"
       >
         <img
           ref={heroRef}
           src={portada.url}
           alt="Segundo Informe de Gobierno, Presidente Municipal Juan Carlos Martínez Calderón, Uriangato Gto."
-          className="h-dvh w-full object-cover object-center will-change-transform"
+          className="block h-auto w-full will-change-transform"
         />
         <div className="pointer-events-none absolute inset-x-0 bottom-0 h-40 bg-[linear-gradient(to_top,oklch(0.47_0.062_163/0.85),transparent)]" />
         <p className="absolute inset-x-0 bottom-8 z-10 text-center font-sans text-xs uppercase tracking-[0.35em] text-cream">
